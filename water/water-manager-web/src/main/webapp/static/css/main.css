@@ -1,0 +1,32 @@
+﻿   		.container a{
+   			float: right;
+   			padding-right:10px;
+   		}
+   		.list-group a{
+   			text-align:right;
+   		}
+   		.container{
+			margin-top:22px;		
+   		}
+   		.div1{
+   			margin-top:-5px;
+   			height:50px;
+   			padding-left:180px;
+   		}
+   		.div2{
+   			margin-top:20px;
+   			padding:30px;
+   			padding-bottom:0px;
+   			float:left;
+   			background-image:url("../images/login_2.jpg");
+   			background-size:100% 103%;
+   			background-repeat: no-repeat;
+   			min-height: 490px;
+   			width: 100%;
+   		}
+   		h5{	
+   			text-align: center;
+   		}
+   		#n1, #n2{
+   			float:left;
+   		}
