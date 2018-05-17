@@ -25,7 +25,7 @@ public class LoginController {
         if (subject.isRemembered()) {
             return "redirect:/home";
         }
-        return "loginss";
+        return "login";
     }
 
 

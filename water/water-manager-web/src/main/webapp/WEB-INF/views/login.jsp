@@ -6,7 +6,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>TMS-综合管理系统</title>
+    <title>水电资费管理系统 </title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <!-- Bootstrap 3.3.7 -->
@@ -45,8 +45,8 @@
 <body class="hold-transition login-page" style="background: url(/static/dist/img/smh.gif)">
 <div class="login-box">
     <div class="login-logo ddd">
-        <%--<a href="/"><b>TMS</b>综合管理系统</a>--%>
-        <a href="#"><img src="/static/dist/img/gl.png" alt="title" width="" height=""></a>
+
+        <a href="#"><img src="/static/dist/img/sd.png" alt="title" width="" height=""></a>
     </div>
     <!-- /.login-logo -->
     <div class="login-box-body dd">

@@ -3,7 +3,9 @@ package com.haoyukeji.water.service.impl;
 import com.haoyukeji.water.entity.TMinfo;
 import com.haoyukeji.water.entity.TUinfo;
 import com.haoyukeji.water.service.LoginService;
+import org.springframework.stereotype.Service;
 
+@Service
 public class LoginServiceImpl implements LoginService {
     @Override
     public boolean login(TUinfo tuinfo) {
