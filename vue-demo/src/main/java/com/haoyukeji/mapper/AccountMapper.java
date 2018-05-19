@@ -3,8 +3,11 @@ package com.haoyukeji.mapper;
 import com.haoyukeji.entity.Account;
 import com.haoyukeji.entity.AccountExample;
 import java.util.List;
+
+import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
+@Mapper
 public interface AccountMapper {
     long countByExample(AccountExample example);
 

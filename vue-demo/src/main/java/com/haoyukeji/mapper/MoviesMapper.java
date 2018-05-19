@@ -3,8 +3,11 @@ package com.haoyukeji.mapper;
 import com.haoyukeji.entity.Movies;
 import com.haoyukeji.entity.MoviesExample;
 import java.util.List;
+
+import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
+@Mapper
 public interface MoviesMapper {
     long countByExample(MoviesExample example);
 
