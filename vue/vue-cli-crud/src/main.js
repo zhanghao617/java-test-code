@@ -13,6 +13,8 @@ Vue.use(ElementUI);
 
 
 Vue.prototype.$http=axios
+//配置axios的默认属性
+axios.defaults.baseURL="http://localhost:9090"
 
 Vue.config.productionTip = false
 
