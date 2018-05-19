@@ -7,13 +7,14 @@ import java.util.Date;
  * @author 
  */
 public class TUinfo implements Serializable {
+
     private Integer username;
 
     private String password;
 
     private String name;
 
-    private Long phone;
+    private String phone;
 
     private String address;
 
@@ -45,11 +46,11 @@ public class TUinfo implements Serializable {
         this.name = name;
     }
 
-    public Long getPhone() {
+    public String getPhone() {
         return phone;
     }
 
-    public void setPhone(Long phone) {
+    public void setPhone(String phone) {
         this.phone = phone;
     }
 

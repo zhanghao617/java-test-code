@@ -42,10 +42,10 @@
         }
     </style>
 </head>
-<body class="hold-transition login-page" style="background: url(/static/dist/img/smh.gif)">
+<body class="hold-transition login-page"  style="background: url(/static/images/login_2.jpg)"><%--style="background: url(/static/dist/img/smh.gif)">--%>
+<div class="div1"><img class="img1" src="../../static/images/login_4.jpg" /></div>
 <div class="login-box">
     <div class="login-logo ddd">
-
         <a href="#"><img src="/static/dist/img/sd.png" alt="title" width="" height=""></a>
     </div>
     <!-- /.login-logo -->
@@ -56,27 +56,31 @@
         </c:if>
         <form method="post">
             <div class="form-group has-feedback">
-                <input type="text" class="form-control" name="accountMobile" placeholder="手机号码" autofocus value="${phone}">
+                <input type="text" class="form-control" name="phone" placeholder="手机号码" autofocus value="${phone}">
             </div>
             <div class="form-group has-feedback">
-                <input type="password" class="form-control" name="accountPassword" placeholder="密码">
+                <input type="password" class="form-control" name="password" placeholder="密码">
             </div>
             <div class="row">
-                <div class="col-xs-8">
+                <div class="col-xs-4">
                     <div class="checkbox icheck">
                         <label>
                             <input type="checkbox" name="rememberMe" value="true"> 记住我
                         </label>
                     </div>
                 </div>
-                <!-- /.col -->
-                <div class="col-xs-4">
+
+            </div>
+            <div class="row">
+                <div class="col-xs-6">
+                    <button type="#" class="btn btn-primary btn-block btn-flat">注册账号</button>
+                </div>
+                <div class="col-xs-6">
                     <button type="submit" class="btn btn-primary btn-block btn-flat">进入系统</button>
                 </div>
-                <!-- /.col -->
             </div>
         </form>
-
+        <div> </div>
         <a href="#">忘记密码</a><br>
     </div>
     <!-- /.login-box-body -->
@@ -100,4 +104,4 @@
     });
 </script>
 </body>
-</html>
+</html>v>

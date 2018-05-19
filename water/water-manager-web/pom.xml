@@ -18,15 +18,14 @@
     </parent>
 
     <dependencies>
-
         <dependency>
             <groupId>com.haoyukeji</groupId>
             <artifactId>water-service</artifactId>
         </dependency>
 
         <dependency>
-            <groupId>com.haoyukeji</groupId>
-            <artifactId>water-service-impl</artifactId>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
         </dependency>
 
         <dependency>
@@ -55,6 +54,16 @@
             <version>2.10.4</version>
         </dependency>
 
+        <dependency>
+            <groupId>org.apache.shiro</groupId>
+            <artifactId>shiro-all</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>commons-codec</groupId>
+            <artifactId>commons-codec</artifactId>
+            <version>1.10</version>
+        </dependency>
     </dependencies>
 
     <build>

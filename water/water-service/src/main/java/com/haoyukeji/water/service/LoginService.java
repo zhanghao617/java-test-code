@@ -1,18 +1,21 @@
 package com.haoyukeji.water.service;
-import com.haoyukeji.water.entity.TMinfo;
-import com.haoyukeji.water.entity.TUinfo;
+
+import com.haoyukeji.water.entity.Account;
 
 /**
  * @author 张浩
  */
 public interface LoginService {
 
-	//用户登录
-	public boolean login(TUinfo tuinfo);
+/*	//用户登录
+	boolean login(TUinfo tuinfo);
 
 	//用户注册
-	public  void register(TUinfo tuinfo);
+	void register(TUinfo tuinfo);
 
 	//用户注册，插入用户注册信息
-	public void register(TMinfo tminfo);
+	void register(TMinfo tminfo);*/
+
+	//验证是否存在该账号
+    Account findByPhone(String phone);
 }

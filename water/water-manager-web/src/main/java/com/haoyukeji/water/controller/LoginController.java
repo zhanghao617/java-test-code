@@ -1,17 +1,21 @@
 package com.haoyukeji.water.controller;
 
-import com.haoyukeji.water.service.LoginService;
+import org.apache.commons.codec.digest.DigestUtils;
 import org.apache.shiro.SecurityUtils;
+import org.apache.shiro.authc.*;
 import org.apache.shiro.subject.Subject;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.apache.shiro.web.util.SavedRequest;
+import org.apache.shiro.web.util.WebUtils;
+import org.junit.Test;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+
+import javax.servlet.http.HttpServletRequest;
 
 @Controller
 public class LoginController {
-
-    @Autowired
-    private LoginService loginService;
 
     @GetMapping("/")
     public String login() {
@@ -28,7 +32,60 @@ public class LoginController {
         return "login";
     }
 
+    @PostMapping("/")
+    public String logining(String phone,
+                           String password,
+                           String rememberMe,
+                           HttpServletRequest request,
+                           RedirectAttributes redirectAttributes) {
 
+        Subject subject = SecurityUtils.getSubject();
+        String requestIP = request.getRemoteAddr();
+        UsernamePasswordToken usernamePasswordToken =
+                new UsernamePasswordToken(phone, DigestUtils.md5Hex(password),rememberMe != null,requestIP);
 
+        try {
+            subject.login(usernamePasswordToken);
+
+            //登录后跳转目标的判断
+            SavedRequest savedRequest = WebUtils.getSavedRequest(request);
+            String url = "/home";
+            if (savedRequest != null) {
+                url = savedRequest.getRequestUrl();
+            }
+            return "redirect:" + url;
+        }catch (UnknownAccountException | IncorrectCredentialsException ex) {
+            ex.printStackTrace();
+            redirectAttributes.addFlashAttribute("message","账号或密码错误");
+        } catch (LockedAccountException ex) {
+            ex.printStackTrace();
+            redirectAttributes.addFlashAttribute("message","账号被锁定");
+        } catch (AuthenticationException ex) {
+            ex.printStackTrace();
+            redirectAttributes.addFlashAttribute("message","账号或密码错误");
+        }
+        return "redirect:/";
+    }
+    /**
+     * 登陆成功后跳转的页面
+     */
+    @GetMapping("/home")
+    public String home() {
+        return "/home";
+    }
+
+    @GetMapping("/logout")
+    public String logout(RedirectAttributes redirectAttributes) {
+        Subject subject = SecurityUtils.getSubject();
+        subject.logout();
+
+        redirectAttributes.addFlashAttribute("message","你已安全退出");
+        return "redirect:/";
+    }
+
+    @GetMapping("/401")
+    public String unauthorizedUrl() {
+        return "error/401";
+    }
 
 }

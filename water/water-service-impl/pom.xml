@@ -21,10 +21,6 @@
             <groupId>com.haoyukeji</groupId>
             <artifactId>water-service</artifactId>
         </dependency>
-        <dependency>
-            <groupId>com.haoyukeji</groupId>
-            <artifactId>water-commons</artifactId>
-        </dependency>
 
         <dependency>
             <groupId>org.springframework</groupId>
