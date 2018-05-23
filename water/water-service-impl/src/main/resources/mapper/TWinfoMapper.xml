@@ -5,8 +5,8 @@
     <id column="wid" jdbcType="INTEGER" property="wid" />
     <result column="wPrice" jdbcType="DOUBLE" property="wprice" />
     <result column="ePrice" jdbcType="DOUBLE" property="eprice" />
-    <result column="startDate" jdbcType="DATE" property="startdate" />
-    <result column="endDate" jdbcType="DATE" property="enddate" />
+    <result column="startDate" jdbcType="TIMESTAMP" property="startdate" />
+    <result column="endDate" jdbcType="TIMESTAMP" property="enddate" />
   </resultMap>
   <sql id="Example_Where_Clause">
     <where>
@@ -103,7 +103,7 @@
     insert into t_winfo (wid, wPrice, ePrice, 
       startDate, endDate)
     values (#{wid,jdbcType=INTEGER}, #{wprice,jdbcType=DOUBLE}, #{eprice,jdbcType=DOUBLE}, 
-      #{startdate,jdbcType=DATE}, #{enddate,jdbcType=DATE})
+      #{startdate,jdbcType=TIMESTAMP}, #{enddate,jdbcType=TIMESTAMP})
   </insert>
   <insert id="insertSelective" parameterType="com.haoyukeji.water.entity.TWinfo">
     insert into t_winfo
@@ -135,10 +135,10 @@
         #{eprice,jdbcType=DOUBLE},
       </if>
       <if test="startdate != null">
-        #{startdate,jdbcType=DATE},
+        #{startdate,jdbcType=TIMESTAMP},
       </if>
       <if test="enddate != null">
-        #{enddate,jdbcType=DATE},
+        #{enddate,jdbcType=TIMESTAMP},
       </if>
     </trim>
   </insert>
@@ -161,10 +161,10 @@
         ePrice = #{record.eprice,jdbcType=DOUBLE},
       </if>
       <if test="record.startdate != null">
-        startDate = #{record.startdate,jdbcType=DATE},
+        startDate = #{record.startdate,jdbcType=TIMESTAMP},
       </if>
       <if test="record.enddate != null">
-        endDate = #{record.enddate,jdbcType=DATE},
+        endDate = #{record.enddate,jdbcType=TIMESTAMP},
       </if>
     </set>
     <if test="_parameter != null">
@@ -176,8 +176,8 @@
     set wid = #{record.wid,jdbcType=INTEGER},
       wPrice = #{record.wprice,jdbcType=DOUBLE},
       ePrice = #{record.eprice,jdbcType=DOUBLE},
-      startDate = #{record.startdate,jdbcType=DATE},
-      endDate = #{record.enddate,jdbcType=DATE}
+      startDate = #{record.startdate,jdbcType=TIMESTAMP},
+      endDate = #{record.enddate,jdbcType=TIMESTAMP}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -192,10 +192,10 @@
         ePrice = #{eprice,jdbcType=DOUBLE},
       </if>
       <if test="startdate != null">
-        startDate = #{startdate,jdbcType=DATE},
+        startDate = #{startdate,jdbcType=TIMESTAMP},
       </if>
       <if test="enddate != null">
-        endDate = #{enddate,jdbcType=DATE},
+        endDate = #{enddate,jdbcType=TIMESTAMP},
       </if>
     </set>
     where wid = #{wid,jdbcType=INTEGER}
@@ -204,8 +204,8 @@
     update t_winfo
     set wPrice = #{wprice,jdbcType=DOUBLE},
       ePrice = #{eprice,jdbcType=DOUBLE},
-      startDate = #{startdate,jdbcType=DATE},
-      endDate = #{enddate,jdbcType=DATE}
+      startDate = #{startdate,jdbcType=TIMESTAMP},
+      endDate = #{enddate,jdbcType=TIMESTAMP}
     where wid = #{wid,jdbcType=INTEGER}
   </update>
 </mapper>

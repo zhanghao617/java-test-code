@@ -10,7 +10,7 @@ public interface TMinfoMapper {
 
     int deleteByExample(TMinfoExample example);
 
-    int deleteByPrimaryKey(Integer mid);
+    int deleteByPrimaryKey(Integer id);
 
     int insert(TMinfo record);
 
@@ -18,7 +18,7 @@ public interface TMinfoMapper {
 
     List<TMinfo> selectByExample(TMinfoExample example);
 
-    TMinfo selectByPrimaryKey(Integer mid);
+    TMinfo selectByPrimaryKey(Integer id);
 
     int updateByExampleSelective(@Param("record") TMinfo record, @Param("example") TMinfoExample example);
 
@@ -27,4 +27,5 @@ public interface TMinfoMapper {
     int updateByPrimaryKeySelective(TMinfo record);
 
     int updateByPrimaryKey(TMinfo record);
+
 }

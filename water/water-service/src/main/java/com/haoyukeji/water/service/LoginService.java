@@ -16,6 +16,16 @@ public interface LoginService {
 	//用户注册，插入用户注册信息
 	void register(TMinfo tminfo);*/
 
-	//验证是否存在该账号
+    /**
+     * 验证是否存在该账号
+     * @param phone
+     * @return
+     */
     Account findByPhone(String phone);
+
+    /**
+     * 添加新账号
+     * @param account
+     */
+    void saveNewAccount(Account account);
 }

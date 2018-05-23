@@ -42,7 +42,7 @@
         }
     </style>
 </head>
-<body class="hold-transition login-page"  style="background: url(/static/images/login_2.jpg)"><%--style="background: url(/static/dist/img/smh.gif)">--%>
+<body class="hold-transition login-page"  style="background: url(/static/images/login_2.jpg)">
 <div class="div1"><img class="img1" src="../../static/images/login_4.jpg" /></div>
 <div class="login-box">
     <div class="login-logo ddd">
@@ -73,7 +73,7 @@
             </div>
             <div class="row">
                 <div class="col-xs-6">
-                    <button type="#" class="btn btn-primary btn-block btn-flat">注册账号</button>
+                    <a href="/register" class="btn btn-primary btn-block btn-flat">注册账号</a>
                 </div>
                 <div class="col-xs-6">
                     <button type="submit" class="btn btn-primary btn-block btn-flat">进入系统</button>

@@ -22,10 +22,13 @@
             <groupId>com.haoyukeji</groupId>
             <artifactId>water-service</artifactId>
         </dependency>
-
         <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
+            <groupId>com.haoyukeji</groupId>
+            <artifactId>water-commons</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.haoyukeji</groupId>
+            <artifactId>water-service-impl</artifactId>
         </dependency>
 
         <dependency>

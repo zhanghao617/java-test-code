@@ -2,41 +2,59 @@ package com.haoyukeji.water.entity;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 
 /**
  * @author 
  */
 public class TMinfo implements Serializable {
-    private Integer mid;
+    private Integer id;
 
-    private Integer a;
+    private Integer aId;
 
+    /**
+     * 使用水的吨数
+     */
     private Double waternumber;
 
+    /**
+     * 使用电的度数
+     */
     private Double eletricnumber;
 
+    /**
+     * 剩余水费金额
+     */
     private Double watermoney;
 
+    /**
+     * 剩余电费金额
+     */
     private Double eletricmoney;
 
+    /**
+     * 报表截止日期
+     */
     private Date enddate;
+
+    private Account account;
 
     private static final long serialVersionUID = 1L;
 
-    public Integer getMid() {
-        return mid;
+    public Integer getId() {
+        return id;
     }
 
-    public void setMid(Integer mid) {
-        this.mid = mid;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
-    public Integer getA() {
-        return a;
+    public Integer getaId() {
+        return aId;
     }
 
-    public void setA(Integer a) {
-        this.a = a;
+    public void setaId(Integer aId) {
+        this.aId = aId;
     }
 
     public Double getWaternumber() {
@@ -77,5 +95,13 @@ public class TMinfo implements Serializable {
 
     public void setEnddate(Date enddate) {
         this.enddate = enddate;
+    }
+
+    public Account getAccount() {
+        return account;
+    }
+
+    public void setAccount(Account account) {
+        this.account = account;
     }
 }

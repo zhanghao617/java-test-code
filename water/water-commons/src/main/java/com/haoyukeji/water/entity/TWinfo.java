@@ -9,12 +9,24 @@ import java.util.Date;
 public class TWinfo implements Serializable {
     private Integer wid;
 
+    /**
+     * 水费
+     */
     private Double wprice;
 
+    /**
+     * 电费
+     */
     private Double eprice;
 
+    /**
+     * 开始时间
+     */
     private Date startdate;
 
+    /**
+     * 结束时间
+     */
     private Date enddate;
 
     private static final long serialVersionUID = 1L;

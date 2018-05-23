@@ -2,8 +2,8 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.haoyukeji.water.mapper.TMinfoMapper">
   <resultMap id="BaseResultMap" type="com.haoyukeji.water.entity.TMinfo">
-    <id column="mid" jdbcType="INTEGER" property="mid" />
-    <result column="a" jdbcType="INTEGER" property="a" />
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="a_id" jdbcType="INTEGER" property="aId" />
     <result column="waterNumber" jdbcType="DOUBLE" property="waternumber" />
     <result column="eletricNumber" jdbcType="DOUBLE" property="eletricnumber" />
     <result column="waterMoney" jdbcType="DOUBLE" property="watermoney" />
@@ -69,7 +69,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    mid, a, waterNumber, eletricNumber, waterMoney, eletricMoney, endDate
+    id, a_id, waterNumber, eletricNumber, waterMoney, eletricMoney, endDate
   </sql>
   <select id="selectByExample" parameterType="com.haoyukeji.water.entity.TMinfoExample" resultMap="BaseResultMap">
     select
@@ -89,11 +89,11 @@
     select 
     <include refid="Base_Column_List" />
     from t_minfo
-    where mid = #{mid,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from t_minfo
-    where mid = #{mid,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
   </delete>
   <delete id="deleteByExample" parameterType="com.haoyukeji.water.entity.TMinfoExample">
     delete from t_minfo
@@ -102,21 +102,21 @@
     </if>
   </delete>
   <insert id="insert" parameterType="com.haoyukeji.water.entity.TMinfo">
-    insert into t_minfo (mid, a, waterNumber, 
+    insert into t_minfo (id, a_id, waterNumber, 
       eletricNumber, waterMoney, eletricMoney, 
       endDate)
-    values (#{mid,jdbcType=INTEGER}, #{a,jdbcType=INTEGER}, #{waternumber,jdbcType=DOUBLE}, 
+    values (#{id,jdbcType=INTEGER}, #{aId,jdbcType=INTEGER}, #{waternumber,jdbcType=DOUBLE}, 
       #{eletricnumber,jdbcType=DOUBLE}, #{watermoney,jdbcType=DOUBLE}, #{eletricmoney,jdbcType=DOUBLE}, 
       #{enddate,jdbcType=DATE})
   </insert>
   <insert id="insertSelective" parameterType="com.haoyukeji.water.entity.TMinfo">
     insert into t_minfo
     <trim prefix="(" suffix=")" suffixOverrides=",">
-      <if test="mid != null">
-        mid,
+      <if test="id != null">
+        id,
       </if>
-      <if test="a != null">
-        a,
+      <if test="aId != null">
+        a_id,
       </if>
       <if test="waternumber != null">
         waterNumber,
@@ -135,11 +135,11 @@
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
-      <if test="mid != null">
-        #{mid,jdbcType=INTEGER},
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
       </if>
-      <if test="a != null">
-        #{a,jdbcType=INTEGER},
+      <if test="aId != null">
+        #{aId,jdbcType=INTEGER},
       </if>
       <if test="waternumber != null">
         #{waternumber,jdbcType=DOUBLE},
@@ -164,14 +164,14 @@
       <include refid="Example_Where_Clause" />
     </if>
   </select>
-  <update id="updateByExampleSelective" parameterType="map">
+    <update id="updateByExampleSelective" parameterType="map">
     update t_minfo
     <set>
-      <if test="record.mid != null">
-        mid = #{record.mid,jdbcType=INTEGER},
+      <if test="record.id != null">
+        id = #{record.id,jdbcType=INTEGER},
       </if>
-      <if test="record.a != null">
-        a = #{record.a,jdbcType=INTEGER},
+      <if test="record.aId != null">
+        a_id = #{record.aId,jdbcType=INTEGER},
       </if>
       <if test="record.waternumber != null">
         waterNumber = #{record.waternumber,jdbcType=DOUBLE},
@@ -195,8 +195,8 @@
   </update>
   <update id="updateByExample" parameterType="map">
     update t_minfo
-    set mid = #{record.mid,jdbcType=INTEGER},
-      a = #{record.a,jdbcType=INTEGER},
+    set id = #{record.id,jdbcType=INTEGER},
+      a_id = #{record.aId,jdbcType=INTEGER},
       waterNumber = #{record.waternumber,jdbcType=DOUBLE},
       eletricNumber = #{record.eletricnumber,jdbcType=DOUBLE},
       waterMoney = #{record.watermoney,jdbcType=DOUBLE},
@@ -209,8 +209,8 @@
   <update id="updateByPrimaryKeySelective" parameterType="com.haoyukeji.water.entity.TMinfo">
     update t_minfo
     <set>
-      <if test="a != null">
-        a = #{a,jdbcType=INTEGER},
+      <if test="aId != null">
+        a_id = #{aId,jdbcType=INTEGER},
       </if>
       <if test="waternumber != null">
         waterNumber = #{waternumber,jdbcType=DOUBLE},
@@ -228,16 +228,16 @@
         endDate = #{enddate,jdbcType=DATE},
       </if>
     </set>
-    where mid = #{mid,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.haoyukeji.water.entity.TMinfo">
     update t_minfo
-    set a = #{a,jdbcType=INTEGER},
+    set a_id = #{aId,jdbcType=INTEGER},
       waterNumber = #{waternumber,jdbcType=DOUBLE},
       eletricNumber = #{eletricnumber,jdbcType=DOUBLE},
       waterMoney = #{watermoney,jdbcType=DOUBLE},
       eletricMoney = #{eletricmoney,jdbcType=DOUBLE},
       endDate = #{enddate,jdbcType=DATE}
-    where mid = #{mid,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
   </update>
 </mapper>
