@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.haoyukeji</groupId>
+    <artifactId>commons-util</artifactId>
+    <version>1.1-SNAPSHOT</version>
+    <packaging>jar</packaging>
+
+    <!--部署配置-->
+    <distributionManagement>
+        <!--快照版-->
+        <snapshotRepository>
+            <id>haoyukeji-snapshot</id>
+            <url>http://192.168.1.180:8081/repository/haoyukeji-snapshot/</url>
+        </snapshotRepository>
+        <!--正式版-->
+        <repository>
+            <id>haoyukeji-release</id>
+            <url>http://192.168.1.180:8081/repository/haoyukeji-release/</url>
+        </repository>
+    </distributionManagement>
+
+
+</project>
